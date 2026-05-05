@@ -22,6 +22,7 @@ crashes/
 
 # Configuraes Locais e Chaves
 config.json
+docs/
 *.env
 keys.txt
 
