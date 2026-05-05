@@ -7,6 +7,20 @@
     "dwViewMatrix": 58113344,
     "dwGlobalVars": 0
   },
+  "bone_indices": {
+    "Head": 6,
+    "Neck": 5,
+    "Chest": 4,
+    "Pelvis": 0,
+    "L_Shoulder": 8,
+    "R_Shoulder": 13,
+    "L_Hand": 11,
+    "R_Hand": 16,
+    "L_Knee": 23,
+    "R_Knee": 28,
+    "L_Foot": 24,
+    "R_Foot": 29
+  },
   "classes": {
     "C_BaseEntity": {
       "m_iHealth": 820,
@@ -15,27 +29,34 @@
       "m_iTeamNum": 995,
       "m_pGameSceneNode": 784,
       "m_bSpotted": 8728,
-      "m_vecAbsVelocity": 1028
-    },
-    "CGameSceneNode": {
-      "m_vecAbsOrigin": 200,
-      "m_vecAbsVelocity": 56,
-      "m_modelState": 368
+      "m_vecAbsVelocity": 1028,
+      "m_fFlags": 968,
+      "m_hOwnerEntity": 1052,
+      "m_flSimulationTime": 792
     },
     "CCitadelPlayerController": {
       "m_hHeroPawn": 2220,
       "m_iszPlayerName": 1776,
       "m_angEyeAngles": 1732,
-      "m_iPlayerState": 2228,
-      "m_vecInventory": 4368
+      "m_nPlayerLevel": 1952,
+      "m_iKillStreak": 1968,
+      "m_vecInventory": 4368,
+      "m_iNetWorth": 1560,
+      "m_iObserverMode": 540
     },
     "C_BasePlayerPawn": {
       "m_hActiveWeapon": 4144,
       "m_iClip1": 4256,
-      "m_hAbilities": 6928
+      "m_hAbilities": 6928,
+      "m_vecViewOffset": 1048,
+      "m_nTickBase": 4384,
+      "m_nCondition": 7960,
+      "m_flFlashDuration": 5232
     },
     "C_BaseAbility": {
       "m_flNextReadyTime": 1496,
+      "m_flNextPrimaryAttack": 360,
+      "m_flCastTime": 1504,
       "m_nCharges": 1516,
       "m_unLevel": 1528
     }

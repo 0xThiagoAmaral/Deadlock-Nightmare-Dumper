@@ -1,49 +1,45 @@
 import pymem
 import pymem.process
-import struct
+import re
 
-class NightmareValidator:
-    def __init__(self):
-        try:
-            self.pm = pymem.Pymem("deadlock.exe")
-            self.client = pymem.process.module_from_name(self.pm.process_handle, "client.dll").lpBaseOfDll
-            print("[+] Conectado para Validação.")
-        except:
-            print("[!] Jogo não encontrado.")
-            return
+def resolve_handle(pm, base, handle):
+    try:
+        entity_list = pm.read_longlong(base + 0x3761a58)
+        entry = pm.read_longlong(entity_list + 0x8 * ((handle & 0x7FFF) >> 9) + 16)
+        return pm.read_longlong(entry + 120 * (handle & 0x1FF))
+    except: return 0
 
-    def validate(self):
-        # Globais que JA VALIDAMOS (eles apontam para memorias validas)
-        offsets = {
-            "dwLocalPlayerController": 0x37665e0,
-            "dwEntityList": 0x3761a58
-        }
+def validate():
+    try:
+        pm = pymem.Pymem("deadlock.exe")
+        client = pymem.process.module_from_name(pm.process_handle, "client.dll")
+        base = client.lpBaseOfDll
+        print("--- Nightmare Final-Proof v3.9 ---")
+        
+        pattern = b"\x48\x8B\x05....\x48\x85\xC0\x74\x4F"
+        data = pm.read_bytes(base, client.SizeOfImage)
+        match = re.search(pattern, data, re.DOTALL)
+        
+        if match:
+            addr = base + match.start()
+            rel_offset = int.from_bytes(pm.read_bytes(addr + 3, 4), byteorder='little', signed=True)
+            controller = pm.read_longlong(addr + 7 + rel_offset)
+            
+            if controller:
+                h_pawn = pm.read_int(controller + 0x8AC)
+                pawn = resolve_handle(pm, base, h_pawn)
+                if pawn:
+                    health = pm.read_int(pawn + 0x334)
+                    print(f"[v] VIDA DETECTADA: {health} HP")
+                    print(f"[v] ENDEREO DO PAWN: {hex(pawn)}")
+                    if health == 790: print("[!!!] MATCH PERFEITO COM O PRINT!")
+                else:
+                    print("[!] Pawn no resolvido. Est vivo?")
+        else:
+            print("[!] Assinatura falhou.")
 
-        print("\n--- INICIANDO BUSCA DE OFFSET REAL ---")
-
-        try:
-            lp_controller = self.pm.read_longlong(self.client + offsets["dwLocalPlayerController"])
-            if lp_controller > 0x10000:
-                print(f"[+] Controller Base: {hex(lp_controller)}")
-                
-                # Vamos ler 4KB da memória do controller e procurar seu nome
-                mem_dump = self.pm.read_bytes(lp_controller, 0x1000)
-                
-                # Aqui você deve colocar seu nick da Steam (vou procurar por padrões comuns de string)
-                # Como não sei seu nick, vou listar strings encontradas no range de offsets 0x500-0x900
-                print("[*] Vasculhando offsets em busca de strings (Nomes)...")
-                for i in range(0x500, 0x900, 4):
-                    try:
-                        potential_name = self.pm.read_string(lp_controller + i, 32)
-                        if potential_name and len(potential_name) > 2 and potential_name.isprintable():
-                            print(f"[!] ACHADO: Offset {hex(i)} -> '{potential_name}'")
-                    except:
-                        continue
-            else:
-                print("[FALHA] dwLocalPlayerController inválido.")
-        except Exception as e:
-            print(f"[ERRO] {e}")
+    except Exception as e:
+        print(f"[!] Erro: {e}")
 
 if __name__ == "__main__":
-    validator = NightmareValidator()
-    validator.validate()
+    validate()
