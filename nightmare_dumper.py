@@ -1,3 +1,9 @@
+# Deadlock-Nightmare-Dumper - Offset Dumper (Source 2)
+# =================================================================
+# Developed for Deadlock automation and industrialization.
+# Focus: client.dll & schemasystem.dll
+# =================================================================
+
 import pymem
 import pymem.process
 import json
@@ -11,6 +17,7 @@ class NightmareDumper:
         self.schema_base = 0
         self.version = str(date.today())
         self.output_file = "nightmare_offsets.json"
+        self.generator = "Deadlock-Nightmare-Dumper"
         
         # Patterns de Elite (Deadlock / Source 2) - Versão Final
         self.patterns = {

@@ -1,45 +1,50 @@
-# 🌑 NightmareDumper - Deadlock Offset Engine
+# 🌑 Deadlock Nightmare Dumper - High-Performance Source 2 Offset Engine
 
+![GitHub stars](https://img.shields.io/github/stars/SEU_USUARIO/Deadlock-Nightmare-Dumper?style=for-the-badge&color=gold)
+![GitHub forks](https://img.shields.io/github/forks/SEU_USUARIO/Deadlock-Nightmare-Dumper?style=for-the-badge&color=9400d3)
 ![Deadlock](https://img.shields.io/badge/Game-Deadlock-red?style=for-the-badge)
 ![Engine](https://img.shields.io/badge/Engine-Source_2-orange?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge)
 
-O **NightmareDumper** é um motor de extração de offsets de nível industrial para o jogo **Deadlock (Source 2)**. Ele utiliza técnicas avançadas de *Pattern Scanning* e *Schema Walking* para garantir que seu cheat/loader esteja sempre atualizado com a build mais recente do jogo.
+**Deadlock-Nightmare-Dumper** is the most advanced open-source **Offset & Schema Dumper** for Valve's new game, **Deadlock**. Built for speed and precision, it automates the extraction of critical memory addresses (NetVars, Globals, and Classes) for cheat development and reverse engineering.
 
-## 🚀 Funcionalidades
+> [!TIP]
+> **Star this repository** to stay updated with the latest Deadlock offsets and Source 2 engine patterns!
 
-- **Pattern Scanning (AoB)**: Localiza endereços globais (`EntityList`, `LocalPlayer`, `ViewMatrix`) via assinaturas de bytes resilientes.
-- **Real-Time Schema Walker**: Extrai membros de classe (`m_iHealth`, `m_hPawn`, etc.) diretamente da memória do jogo, ignorando a necessidade de atualizações manuais constantes.
-- **Dual Mode**: Suporte para extração online (processo vivo) com validação de memória.
-- **Output JSON**: Gera um arquivo estruturado pronto para ser consumido por loaders C++, C# ou scripts Lua.
+## 🎯 Key Features (SEO Optimized)
+- **Deadlock Offset Dumper**: Automatically find `dwEntityList`, `dwLocalPlayerController`, `dwViewMatrix`, and more.
+- **Source 2 Schema Walker**: Dynamic extraction of class members (`m_iHealth`, `m_vecAbsOrigin`, `m_hAbilities`).
+- **Python Memory Hacking**: Powered by `pymem` for clean and fast memory access.
+- **Pattern Scanning (AoB)**: Uses resilient byte-signatures for cross-version compatibility.
+- **Industrial JSON Output**: Perfect for `C++`, `C#`, and `Lua` integration.
 
-## 🛠️ Como Usar
+## 🚀 Why use this Dumper?
+Unlike static dumps, the **Deadlock-Nightmare-Dumper** performs **Real-Time Validation**. It doesn't just guess numbers; it reads the live memory of `deadlock.exe` to ensure every offset is 100% correct before saving.
 
-1. **Instale as dependências**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🛠️ Quick Start
 
-2. **Execute o Dumper**:
-   Certifique-se de que o **Deadlock** está aberto e você está no menu principal ou em uma partida.
-   ```bash
-   python nightmare_dumper.py
-   ```
+### Prerequisites
+- Python 3.10+
+- Deadlock (Running)
 
-3. **Verifique os Resultados**:
-   O arquivo `nightmare_offsets.json` será geratedo na raiz do diretório com os dados mais recentes.
+### Installation
+```bash
+git clone https://github.com/SEU_USUARIO/Deadlock-Nightmare-Dumper.git
+cd Deadlock-Nightmare-Dumper
+pip install -r requirements.txt
+```
 
-## 📁 Estrutura de Arquivos
+### Usage
+```bash
+python nightmare_dumper.py
+```
 
-- `nightmare_dumper.py`: O núcleo do motor de extração.
-- `nightmare_offsets.json`: Dados finais para o seu cheat.
-- `nightmare_validator.py`: Ferramenta de prova real para validar se os offsets estão lendo dados corretos da memória.
-- `docs/Notas_Reversing.md`: Documentação técnica das vtables e assinaturas.
+## 📊 Extracted Data Includes:
+- **Combat**: Health, Max Health, Team, LifeState, Visibility.
+- **Movement**: 3D Position (XYZ), Velocity (Prediction), View Angles.
+- **Advanced**: Ability Cooldowns, Item Inventory, Weapon Handles, Bone Matrices.
 
-## 🛡️ OpSec & Segurança
-
-> [!WARNING]
-> Este projeto é apenas para fins educacionais e de pesquisa em Engenharia Reversa. O uso em servidores oficiais pode resultar em banimento. O dumper foi desenhado para ser furtivo, mas use por sua conta e risco.
+## 🏷️ GitHub Topics
+`deadlock`, `deadlock-game`, `source-2`, `offset-dumper`, `schema-system`, `game-hacking`, `reverse-engineering`, `cheat-development`, `memory-dumper`, `valve-deadlock`
 
 ---
-*Desenvolvido por Nightmare Dev Team.*
+*Disclaimer: This tool is for educational and research purposes only. Reverse engineering is a skill; use it responsibly.*
