@@ -1,0 +1,36 @@
+# Compilados e Binários (OpSec Crítico)
+*.dll
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+build/
+out/
+bin/
+x64/
+target/
+Debug/
+Release/
+
+# Dumps de Memória e Logs
+*.dmp
+*.mdmp
+logs/
+crashes/
+
+# Configurações Locais e Chaves
+config.ini
+*.env
+keys.txt
+
+# Arquivos da IDE
+.vscode/
+*.user
+.vs/
+
+
+# Added by cargo
+
+/target

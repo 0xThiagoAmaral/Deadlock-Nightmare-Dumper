@@ -1,0 +1,51 @@
+{
+  "version": "2026-05-05",
+  "generator": "NightmareDumper",
+  "client_dll_base": "0x7ffab9780000",
+  "globals": {
+    "dwEntityList": 58071640,
+    "dwLocalPlayerController": 58090976,
+    "dwViewMatrix": 58113344,
+    "dwGlobalVars": 0
+  },
+  "classes": {
+    "C_BaseEntity": {
+      "m_iHealth": 820,
+      "m_iMaxHealth": 816,
+      "m_lifeState": 828,
+      "m_iTeamNum": 995,
+      "m_pGameSceneNode": 784,
+      "m_bSpotted": 8728,
+      "m_vecAbsVelocity": 1028
+    },
+    "CGameSceneNode": {
+      "m_vecAbsOrigin": 200,
+      "m_vecAbsVelocity": 56,
+      "m_modelState": 368
+    },
+    "CCitadelPlayerController": {
+      "m_hHeroPawn": 2220,
+      "m_iszPlayerName": 1776,
+      "m_angEyeAngles": 1732,
+      "m_iPlayerState": 2228,
+      "m_vecInventory": 4368
+    },
+    "C_BasePlayerPawn": {
+      "m_hActiveWeapon": 4144,
+      "m_iClip1": 4256,
+      "m_hAbilities": 6928
+    },
+    "C_BaseAbility": {
+      "m_flNextReadyTime": 1496,
+      "m_nCharges": 1516,
+      "m_unLevel": 1528
+    },
+    "CEntityIdentity": {
+      "size": 112,
+      "m_pEntity": 0,
+      "m_designerName": 32,
+      "m_hHandle": 16,
+      "m_next": 88
+    }
+  }
+}
