@@ -1,50 +1,41 @@
-# 🌑 Deadlock Nightmare Dumper - High-Performance Source 2 Offset Engine
+# 🌑 Deadlock Nightmare Dumper - Ultimate Source 2 Offset Engine
 
-![GitHub stars](https://img.shields.io/github/stars/SEU_USUARIO/Deadlock-Nightmare-Dumper?style=for-the-badge&color=gold)
-![GitHub forks](https://img.shields.io/github/forks/SEU_USUARIO/Deadlock-Nightmare-Dumper?style=for-the-badge&color=9400d3)
+![GitHub stars](https://img.shields.io/github/stars/0xThiagoAmaral/Deadlock-Nightmare-Dumper?style=for-the-badge&color=gold)
 ![Deadlock](https://img.shields.io/badge/Game-Deadlock-red?style=for-the-badge)
 ![Engine](https://img.shields.io/badge/Engine-Source_2-orange?style=for-the-badge)
 
-**Deadlock-Nightmare-Dumper** is the most advanced open-source **Offset & Schema Dumper** for Valve's new game, **Deadlock**. Built for speed and precision, it automates the extraction of critical memory addresses (NetVars, Globals, and Classes) for cheat development and reverse engineering.
+**Deadlock-Nightmare-Dumper** is an industrial-grade **Offset & Schema Dumper** for Valve's Deadlock. It doesn't just find offsets; it provides a full development ecosystem with multi-language SDK generation and real-time notifications.
 
-> [!TIP]
-> **Star this repository** to stay updated with the latest Deadlock offsets and Source 2 engine patterns!
+> [!IMPORTANT]
+> **Pro Edition Features Now Available**: C# SDK support and Discord Webhook integration.
 
-## 🎯 Key Features (SEO Optimized)
-- **Deadlock Offset Dumper**: Automatically find `dwEntityList`, `dwLocalPlayerController`, `dwViewMatrix`, and more.
-- **Source 2 Schema Walker**: Dynamic extraction of class members (`m_iHealth`, `m_vecAbsOrigin`, `m_hAbilities`).
-- **Python Memory Hacking**: Powered by `pymem` for clean and fast memory access.
-- **Pattern Scanning (AoB)**: Uses resilient byte-signatures for cross-version compatibility.
-- **Industrial JSON Output**: Perfect for `C++`, `C#`, and `Lua` integration.
+## 🎯 Key Features
+- **Dynamic Crawler**: Automatically indexes all **33+ heroes** (including Labs/Hidden pawns).
+- **Multi-Language SDK Generation**:
+  - **C++ (`.hpp`)**: Organized namespaces with `constexpr` performance.
+  - **C# (`.cs`)**: Static classes for easy integration with .NET loaders.
+  - **JSON**: Structured data for Lua and Python scripts.
+- **Discord Webhook Integration**: Get notified instantly when offsets are updated.
+- **Pattern Scanning (AoB)**: Resilient signatures for `EntityList`, `LocalPlayer`, and `ViewMatrix`.
+- **Real-Time Validation**: Built-in memory validator to ensure 100% data integrity.
 
-## 🚀 Why use this Dumper?
-Unlike static dumps, the **Deadlock-Nightmare-Dumper** performs **Real-Time Validation**. It doesn't just guess numbers; it reads the live memory of `deadlock.exe` to ensure every offset is 100% correct before saving.
-
-## 🛠️ Quick Start
-
-### Prerequisites
-- Python 3.10+
-- Deadlock (Running)
-
-### Installation
-```bash
-git clone https://github.com/SEU_USUARIO/Deadlock-Nightmare-Dumper.git
-cd Deadlock-Nightmare-Dumper
-pip install -r requirements.txt
+## 🛠️ Configuration (`config.json`)
+Manage your dumper settings without touching the source code:
+```json
+{
+  "discord_webhook": "YOUR_WEBHOOK_URL",
+  "generate_csharp": true,
+  "generate_cpp": true
+}
 ```
 
-### Usage
-```bash
-python nightmare_dumper.py
-```
-
-## 📊 Extracted Data Includes:
-- **Combat**: Health, Max Health, Team, LifeState, Visibility.
-- **Movement**: 3D Position (XYZ), Velocity (Prediction), View Angles.
-- **Advanced**: Ability Cooldowns, Item Inventory, Weapon Handles, Bone Matrices.
+## 🚀 Usage
+1. **Setup**: `pip install -r requirements.txt`
+2. **Run**: `python nightmare_dumper.py`
+3. **Deploy**: Copy the generated `.hpp` or `.cs` to your project and start coding!
 
 ## 🏷️ GitHub Topics
-`deadlock`, `deadlock-game`, `source-2`, `offset-dumper`, `schema-system`, `game-hacking`, `reverse-engineering`, `cheat-development`, `memory-dumper`, `valve-deadlock`
+`deadlock`, `deadlock-game`, `source-2`, `offset-dumper`, `schema-system`, `game-hacking`, `reverse-engineering`, `cheat-development`, `csharp-sdk`, `cpp-sdk`, `discord-webhook`
 
 ---
-*Disclaimer: This tool is for educational and research purposes only. Reverse engineering is a skill; use it responsibly.*
+*Developed by 0xThiagoAmaral. For educational and research purposes only.*
